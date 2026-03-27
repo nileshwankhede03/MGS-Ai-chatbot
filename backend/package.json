@@ -1,0 +1,27 @@
+{
+  "name": "second-round-assignm-final-13617-nilesh",
+  "version": "1.0.0",
+  "description": "Final Project Assignment - This repository contains the complete final project code and documentation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exelynt-learning-platform/second-round-assignm-final-13617-nilesh.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exelynt-learning-platform/second-round-assignm-final-13617-nilesh/issues"
+  },
+  "homepage": "https://github.com/exelynt-learning-platform/second-round-assignm-final-13617-nilesh#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.3"
+  }
+}
