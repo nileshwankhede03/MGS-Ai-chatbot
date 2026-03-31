@@ -160,18 +160,6 @@ POST /api/chat
 
 ---
 
-## 📸 Screenshots
-
-￼
-
-￼
-
-￼
-
-￼
-
-## ￼
-
 ## 🔐 Security
 
 - API key stored securely using environment variables
