@@ -50,8 +50,6 @@ The application enables users to send messages and receive AI-generated response
 
 ## 🛠️ Tech Stack (React + Redux Toolkit + Node.js + Express + Gemini API, No MongoDB Used)
 
-\
-
 ---
 
 ## 🏗️ Architecture
@@ -164,9 +162,15 @@ POST /api/chat
 
 ## 📸 Screenshots
 
-> Add screenshots of the application UI here
+￼
 
----
+￼
+
+￼
+
+￼
+
+## ￼
 
 ## 🔐 Security
 
@@ -175,49 +179,10 @@ POST /api/chat
 
 ---
 
-## 📊 Evaluation Criteria Covered
-
-### ✔ State Management (20%)
-
-- Redux used for managing chat history, loading, and error states
-- Async API calls handled using createAsyncThunk
-
-### ✔ API Integration (25%)
-
-- Successful AI API integration
-- Proper error handling and secure API key usage
-
-### ✔ UI/UX (20%)
-
-- Clean and responsive interface
-- Proper message alignment
-- Loading indicator and error display
-
-### ✔ Performance (15%)
-
-- Smooth UI interactions
-- Efficient rendering and state updates
-
-### ✔ Code Quality (10%)
-
-- Modular structure with 4-layer architecture
-- Clean and maintainable codebase
-
----
-
-## 🔮 Future Enhancements
-
-- Add multiple chat sessions
-- Store chats in a database
-- Implement authentication
-- Add streaming responses
-
----
-
 ## 👨‍💻 Author
 
 **Nilesh Bhausaheb Wankhede**
-BTech Information Technology Student
+BTech in Information Technology
 
 ---
 
