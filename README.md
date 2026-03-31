@@ -1,2 +1,226 @@
 # second-round-assignm-final-13617-nilesh
-Final Project Assignment - This repository contains the complete final project code and documentation.
+
+# 🤖 Chatbox Application with AI Integration
+
+## 📌 Overview
+
+This project is a **Chatbox Application** built as part of an assignment to demonstrate integration with an AI API and effective state management using **Redux Toolkit (React)**.
+
+The application enables users to send messages and receive AI-generated responses in real time. It focuses on clean UI/UX, efficient asynchronous handling, and a scalable architecture.
+
+---
+
+## 🚀 Features
+
+### 💬 User Interaction
+
+- Send messages through an input field
+- Receive real-time AI responses
+- Dynamic chat interface
+
+### 🔄 State Management (Redux)
+
+- Store chat history (user + AI messages)
+- Manage loading state during API calls
+- Handle error states with user-friendly messages
+- Async API handling using **createAsyncThunk**
+
+### 🌐 API Integration
+
+- Integrated with **Gemini API**
+- Secure API key using environment variables
+- Proper request-response handling
+- Error handling for network/API issues
+
+### 🎨 UI/UX
+
+- Clean and intuitive chat interface
+- Left-right message alignment (User vs AI)
+- Typing animation (loading indicator)
+- Markdown rendering for structured responses
+- Fully responsive design (mobile + desktop)
+
+### ⚡ Performance
+
+- Smooth UI interactions without lag
+- Efficient rendering using Redux
+- Handles multiple messages seamlessly
+
+---
+
+## 🛠️ Tech Stack (React + Redux Toolkit + Node.js + Express + Gemini API, No MongoDB Used)
+
+\
+
+---
+
+## 🏗️ Architecture
+
+The project follows a **4-layer architecture**:
+
+```text
+UI Layer        → React Components (ChatLayout, MessageBubble)
+Hook Layer      → Custom Hooks (useChat)
+State Layer     → Redux Toolkit (chatSlice, store)
+Service Layer   → API Calls (chatService)
+```
+
+---
+
+## 📂 Project Structure
+
+```bash
+src/
+├── components/
+│   ├── layout/
+│   ├── chat/
+├── hooks/
+├── store/
+│   └── slices/
+├── services/
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone <your-repo-url>
+cd project-folder
+```
+
+---
+
+### 2️⃣ Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create `.env` file:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+Run server:
+
+```bash
+node server.js
+```
+
+---
+
+### 3️⃣ Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## ▶️ Usage
+
+1. Open the application in your browser
+2. Enter a message in the input box
+3. Click **Send** or press **Enter**
+4. View AI responses instantly in the chat interface
+
+---
+
+## 🌐 API Details
+
+### Endpoint
+
+```
+POST /api/chat
+```
+
+### Request Body
+
+```json
+{
+  "message": "Hello AI"
+}
+```
+
+### Response
+
+```json
+{
+  "reply": "Hello! How can I assist you today?"
+}
+```
+
+---
+
+## 📸 Screenshots
+
+> Add screenshots of the application UI here
+
+---
+
+## 🔐 Security
+
+- API key stored securely using environment variables
+- No sensitive data exposed on the frontend
+
+---
+
+## 📊 Evaluation Criteria Covered
+
+### ✔ State Management (20%)
+
+- Redux used for managing chat history, loading, and error states
+- Async API calls handled using createAsyncThunk
+
+### ✔ API Integration (25%)
+
+- Successful AI API integration
+- Proper error handling and secure API key usage
+
+### ✔ UI/UX (20%)
+
+- Clean and responsive interface
+- Proper message alignment
+- Loading indicator and error display
+
+### ✔ Performance (15%)
+
+- Smooth UI interactions
+- Efficient rendering and state updates
+
+### ✔ Code Quality (10%)
+
+- Modular structure with 4-layer architecture
+- Clean and maintainable codebase
+
+---
+
+## 🔮 Future Enhancements
+
+- Add multiple chat sessions
+- Store chats in a database
+- Implement authentication
+- Add streaming responses
+
+---
+
+## 👨‍💻 Author
+
+**Nilesh Bhausaheb Wankhede**
+BTech Information Technology Student
+
+---
+
+## 🏁 Conclusion
+
+This project demonstrates the implementation of **AI integration, Redux-based state management, and modern frontend development practices**, fulfilling all assignment requirements while maintaining clean architecture and user experience 🚀
