@@ -1,6 +1,6 @@
-
 export const ERROR_MESSAGES = {
-    API_FAILED: "Sorry, I couldn't get a response right now. Please try again.",
+    API_FAILED: "Sorry, something went wrong. Please try again.",
+    MESSAGE_TOO_LONG: (max) => `Message too long (max ${max} characters)`,
 };
 
 export const ROLES = {

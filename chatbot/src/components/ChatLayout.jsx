@@ -3,7 +3,7 @@ import { useChat } from '../hooks/useChat.js';
 import MessageBubble from '../components/MessageBubble.jsx';
 import TypingIndicator from '../components/TypingIndicator';
 import toast from 'react-hot-toast';
-import { MAX_MESSAGE_LENGTH } from '../constants/constants';
+import { MAX_MESSAGE_LENGTH, ERROR_MESSAGES } from '../constants/constants';
 
 const ChatLayout = () => {
   const [input, setInput] = useState('');
@@ -17,7 +17,7 @@ const ChatLayout = () => {
     if (!trimmed) return;
 
     if (trimmed.length > MAX_MESSAGE_LENGTH) {
-      toast.error(`Message too long (max ${MAX_MESSAGE_LENGTH} characters)`);
+      toast.error(ERROR_MESSAGES.MESSAGE_TOO_LONG(MAX_MESSAGE_LENGTH));
       return;
     }
 
