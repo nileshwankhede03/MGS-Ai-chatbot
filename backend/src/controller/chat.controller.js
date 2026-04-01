@@ -9,11 +9,18 @@ const axios = require('axios');
 async function chatController(req, res) {
   const { message } = req.body;
 
-  if (!message || !message.trim()) {
+  if (typeof message !== 'string' || !message.trim()) {
+    return res.status(400).json({ error: 'Message is required' });
+  }
+
+  if (message.length > 1000) {
     return res.status(400).json({
-      error: 'Message is required',
+      error: 'Message is too long...',
     });
   }
+
+  // basic sanitization (trim)
+  const cleanMessage = message.trim();
 
   if (!process.env.GEMINI_API_KEY) {
     return res.status(500).json({
@@ -27,7 +34,7 @@ async function chatController(req, res) {
       {
         contents: [
           {
-            parts: [{ text: message }],
+            parts: [{ text: cleanMessage }],
           },
         ],
       },
@@ -46,7 +53,6 @@ async function chatController(req, res) {
 
     return res.status(error.response?.status || 500).json({
       error: 'MGS AI service unavailable. Please try again later.',
-      code: error.response?.status || 500,
     });
   }
 }

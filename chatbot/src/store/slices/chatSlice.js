@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { sendMessageAPI } from '../../services/chatService.js';
 import { ERROR_MESSAGES } from '../../constants/constants.js';
+import { ROLES } from '../../constants/constants';
 
 export const sendMessage = createAsyncThunk(
   'chat/sendMessage',
@@ -18,7 +19,7 @@ const chatSlice = createSlice({
   },
   reducers: {
     addUserMessage: (state, action) => {
-      state.messages.push({ role: 'user', content: action.payload });
+      state.messages.push({ role: ROLES.USER, content: action.payload });
     },
   },
   extraReducers: (builder) => {
@@ -30,7 +31,7 @@ const chatSlice = createSlice({
       .addCase(sendMessage.fulfilled, (state, action) => {
         state.loading = false;
         state.messages.push({
-          role: 'assistant',
+          role: ROLES.ASSISTANT,
           content: action.payload,
         });
       })
