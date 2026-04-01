@@ -87,6 +87,7 @@ const ChatLayout = () => {
               className="
                 chat-button
                 flex items-center justify-center
+                disabled:opacity-50 disabled:cursor-not-allowed
               "
             >
               {loading ? 'Sending...' : 'Send'}

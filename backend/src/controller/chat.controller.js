@@ -5,6 +5,8 @@ const { API_TIMEOUT_MS, GEMINI_API_URL } = require('../constants/constants.js');
  * @route POST /api/chat
  * @desc Handle chat messages and get responses from GEMINI API
  * @access Public
+ * @param {Object} req - Express request object (contains body with user message)
+ * @param {Object} res - Express response object (used to send response)
  */
 
 async function chatController(req, res) {
