@@ -1,5 +1,13 @@
 @import 'tailwindcss';
 
+.chat-container {
+  @apply max-w-7xl mx-auto py-4 px-4;
+}
+
+.chat-button {
+  @apply bg-[#10A37F] hover:bg-[#0d8f6e] px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
 @keyframes wave {
   0%,
   60%,

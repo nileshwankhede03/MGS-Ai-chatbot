@@ -13,9 +13,10 @@ export const useChat = () => {
   const retry = () => {
     if (!messages || messages.length === 0) return;
 
-    const lastUserMessage =
-      messages.findLast?.((msg) => msg.role === "user") ||
-      [...messages].reverse().find((msg) => msg.role === "user");
+    const lastUserMessage = messages
+      .slice()
+      .reverse()
+      .find((msg) => msg.role === 'user');
 
     if (lastUserMessage) {
       dispatch(sendMessage(lastUserMessage.content));

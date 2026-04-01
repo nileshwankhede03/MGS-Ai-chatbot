@@ -8,4 +8,5 @@ export const ROLES = {
     ASSISTANT: "assistant",
 };
 
+export const MAX_MESSAGE_LENGTH = 1000;
 export const API_TIMEOUT_MS = 10000;

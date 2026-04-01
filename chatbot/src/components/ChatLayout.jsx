@@ -3,6 +3,7 @@ import { useChat } from '../hooks/useChat.js';
 import MessageBubble from '../components/MessageBubble.jsx';
 import TypingIndicator from '../components/TypingIndicator';
 import toast from 'react-hot-toast';
+import { MAX_MESSAGE_LENGTH } from '../constants/constants';
 
 const ChatLayout = () => {
   const [input, setInput] = useState('');
@@ -15,8 +16,8 @@ const ChatLayout = () => {
 
     if (!trimmed) return;
 
-    if (trimmed.length > 1000) {
-      toast.error('Message too long...');
+    if (trimmed.length > MAX_MESSAGE_LENGTH) {
+      toast.error(`Message too long (max ${MAX_MESSAGE_LENGTH} characters)`);
       return;
     }
 
@@ -32,7 +33,7 @@ const ChatLayout = () => {
     <div className="min-h-screen bg-[#0F172A] text-gray-200 flex flex-col">
       {/* Header */}
       <div className="border-b border-gray-800 bg-[#111827]/70 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto py-4 px-4 flex justify-between items-center">
+        <div className="chat-container px-4 flex justify-between items-center">
           <h1 className="text-lg font-semibold tracking-wide">MGS AI</h1>
           <span className="text-xs text-gray-400">
             Created by Nilesh Wankhede.
@@ -84,10 +85,7 @@ const ChatLayout = () => {
               onClick={handleSend}
               disabled={loading}
               className="
-                bg-[#10A37F] hover:bg-[#0d8f6e]
-                px-4 py-2 rounded-lg text-sm font-medium
-                transition-all duration-200
-                disabled:opacity-50 disabled:cursor-not-allowed
+                chat-button
                 flex items-center justify-center
               "
             >

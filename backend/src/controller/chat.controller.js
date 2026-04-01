@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { API_TIMEOUT_MS } = require('../constants/constants.js');
+const { API_TIMEOUT_MS, GEMINI_API_URL } = require('../constants/constants.js');
 
 /**
  * @route POST /api/chat
@@ -31,7 +31,7 @@ async function chatController(req, res) {
 
   try {
     const response = await axios.post(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `${GEMINI_API_URL}?key=${process.env.GEMINI_API_KEY}`,
       {
         contents: [
           {
@@ -50,7 +50,7 @@ async function chatController(req, res) {
 
     return res.status(200).json({ reply });
   } catch (error) {
-    console.error('AI API Error:', error.response?.status || error.message);
+    console.error('AI API Error:', error.response?.data || error.message);
 
     return res.status(error.response?.status || 500).json({
       error: 'MGS AI service unavailable. Please try again later.',
