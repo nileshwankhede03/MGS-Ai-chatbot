@@ -1,4 +1,5 @@
 const axios = require('axios');
+const API_TIMEOUT_MS = 10000;
 
 /**
  * @route POST /api/chat
@@ -39,7 +40,7 @@ async function chatController(req, res) {
         ],
       },
       {
-        timeout: 10000,
+        timeout: API_TIMEOUT_MS,
       },
     );
 

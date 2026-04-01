@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useChat } from '../hooks/useChat.js';
 import MessageBubble from '../components/MessageBubble.jsx';
 import TypingIndicator from '../components/TypingIndicator';
+import toast from 'react-hot-toast';
 
 const ChatLayout = () => {
   const [input, setInput] = useState('');
@@ -15,7 +16,7 @@ const ChatLayout = () => {
     if (!trimmed) return;
 
     if (trimmed.length > 1000) {
-      alert('Message too long');
+      toast.error('Message too long...');
       return;
     }
 

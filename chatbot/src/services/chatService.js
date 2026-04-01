@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { API_TIMEOUT_MS } from '../constants/constants.js';
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_CLIENT_URL,
-  timeout: 10000,
+  timeout: API_TIMEOUT_MS,
 });
 
 export const sendMessageAPI = async (message) => {
