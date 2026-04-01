@@ -11,10 +11,15 @@ export const useChat = () => {
   };
 
   const retry = () => {
-    if (messages.length === 0) return;
+    if (!messages || messages.length === 0) return;
 
-    const lastUser = [...messages].reverse().find((m) => m.role === 'user');
-    if (lastUser) dispatch(sendMessage(lastUser.content));
+    const lastUserMessage =
+      messages.findLast?.((msg) => msg.role === "user") ||
+      [...messages].reverse().find((msg) => msg.role === "user");
+
+    if (lastUserMessage) {
+      dispatch(sendMessage(lastUserMessage.content));
+    }
   };
 
   return { messages, loading, error, send, retry };

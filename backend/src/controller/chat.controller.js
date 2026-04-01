@@ -1,5 +1,5 @@
 const axios = require('axios');
-const API_TIMEOUT_MS = 10000;
+const { API_TIMEOUT_MS } = require('../constants/constants.js');
 
 /**
  * @route POST /api/chat

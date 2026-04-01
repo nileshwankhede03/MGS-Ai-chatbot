@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { sendMessageAPI } from '../../services/chatService.js';
-import { ERROR_MESSAGES } from '../../constants/constants.js';
-import { ROLES } from '../../constants/constants';
+import { ERROR_MESSAGES, ROLES } from '../../constants/constants.js';
 
 export const sendMessage = createAsyncThunk(
   'chat/sendMessage',
