@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { sendMessageAPI } from "../../services/chatService.js";
+import { ERROR_MESSAGES } from '../../constants/constants.js'
 
 export const sendMessage = createAsyncThunk(
   "chat/sendMessage",
@@ -35,7 +36,7 @@ const chatSlice = createSlice({
       })
       .addCase(sendMessage.rejected, (state) => {
         state.loading = false;
-        state.error = "Sorry, I couldn't get a response right now. Please try again or check your connection.";
+        state.error = ERROR_MESSAGES.API_FAILED;
       });
   },
 });
