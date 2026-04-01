@@ -45,7 +45,7 @@ const ChatLayout = () => {
           )}
 
           {messages.map((msg, i) => (
-            <MessageBubble key={i} {...msg} />
+            <MessageBubble key={`${msg.role}-${i}`} {...msg} />
           ))}
 
           {loading && <TypingIndicator />}
@@ -81,9 +81,16 @@ const ChatLayout = () => {
 
             <button
               onClick={handleSend}
-              className="bg-[#10A37F] hover:bg-[#0d8f6e] px-4 py-2 rounded-lg text-sm font-medium transition"
+              disabled={loading}
+              className="
+                bg-[#10A37F] hover:bg-[#0d8f6e]
+                px-4 py-2 rounded-lg text-sm font-medium
+                transition-all duration-200
+                disabled:opacity-50 disabled:cursor-not-allowed
+                flex items-center justify-center
+              "
             >
-              Send
+              {loading ? "Sending..." : "Send"}
             </button>
 
           </div>

@@ -1,16 +1,16 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { sendMessageAPI } from "../../services/chatService.js";
-import { ERROR_MESSAGES } from '../../constants/constants.js'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { sendMessageAPI } from '../../services/chatService.js';
+import { ERROR_MESSAGES } from '../../constants/constants.js';
 
 export const sendMessage = createAsyncThunk(
-  "chat/sendMessage",
+  'chat/sendMessage',
   async (message) => {
     return await sendMessageAPI(message);
-  }
+  },
 );
 
 const chatSlice = createSlice({
-  name: "chat",
+  name: 'chat',
   initialState: {
     messages: [],
     loading: false,
@@ -18,7 +18,7 @@ const chatSlice = createSlice({
   },
   reducers: {
     addUserMessage: (state, action) => {
-      state.messages.push({ role: "user", content: action.payload });
+      state.messages.push({ role: 'user', content: action.payload });
     },
   },
   extraReducers: (builder) => {
@@ -30,13 +30,13 @@ const chatSlice = createSlice({
       .addCase(sendMessage.fulfilled, (state, action) => {
         state.loading = false;
         state.messages.push({
-          role: "assistant",
+          role: 'assistant',
           content: action.payload,
         });
       })
-      .addCase(sendMessage.rejected, (state) => {
+      .addCase(sendMessage.rejected, (state, action) => {
         state.loading = false;
-        state.error = ERROR_MESSAGES.API_FAILED;
+        state.error = action.error?.message || ERROR_MESSAGES.API_FAILED;
       });
   },
 });
